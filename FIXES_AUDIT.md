@@ -59,6 +59,29 @@ hard-disabled (`false && params.get("kv")`) with a [qd]
 comment, so the deployed page cannot reach it until our
 completed stage-3 chain replaces the stub.
 
+## Amendment — 2026-11-01 17:39 EST (post-audit payload swap)
+
+Section 3 above was true at audit time. The payload was then
+swapped by the project owner via repo upload (commit
+3d3ee78f): **site/payload.bin is now the GoldHEN 14.00 build**
+from the goldhen-1400-port project — 293,555 bytes,
+SHA-256 e66274586b895479eeedcbf69a5e694a72216f7ea0e734b1f6d55e4dd0c4b355
+(git blob 3b119367…), verified in the repo and redeployed to
+the live site the same day. Nothing else in
+this audit changed: the fixes in §1, §2, §4 and §5 stand as
+audited. Two clarifications for readers:
+
+- **site/goldhen.bin is not the GoldHEN 14.00 build.** It is
+  the chassis's own file, byte-identical to payload2.bin —
+  the ≤13.52 stock HEN (SHA-256 df3f27c1…). The 14.00 build
+  exists in this repo only under the payload slot name,
+  site/payload.bin; there is no file named goldhen_1400.bin
+  in the tree.
+- Paths cited in §3–§4 that begin `~/workspace/…` are
+  locations in the project's build workspace, not paths in
+  this repo. This repo has no `patches/` directory; the
+  kernel patch set lives with the goldhen-1400-port project.
+
 ## 6. Residual carried knowingly
 
 patch_+0x15C at the 13.52 donor value (0x76C270) — the same
